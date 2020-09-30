@@ -45,7 +45,7 @@ app.post("/api/notes", function (req, res) {
 
 app.delete("/api/notes/:id", function (req, res) {
   try {
-    notesData = fs.readFileSync("./db/db.json", "utf8");
+    noteData = fs.readFileSync("./db/db.json", "utf8");
     notesData = JSON.parse(notesData);
     notesData = notesData.filter(function (note) {
       return note.id != req.params.id;
